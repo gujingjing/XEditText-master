@@ -1,0 +1,99 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.xw.repo.xedittext.XEditText
+            android:id="@+id/default_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="默认分割格式"
+            android:inputType="phone"/>
+        <!--切勿设置maxLength属性-->
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#1976d2"/>
+
+        <com.xw.repo.xedittext.XEditText
+            android:id="@+id/custom_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="自定义分割格式"
+            android:inputType="number"/>
+        <!-- 如果inputType="number" 的话是没法插入非数字字符的，
+        所以在初始化时已经强行转为inputType="phone"-->
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#1976d2"/>
+
+        <Button
+            android:id="@+id/show_pattern_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分割13800000000"/>
+
+        <com.xw.repo.xedittext.XEditText
+            android:id="@+id/show_separator_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="自动显示为分割格式"/>
+
+        <com.xw.repo.xedittext.XEditText
+            android:id="@+id/custom_marker_edit_text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:drawableRight="@drawable/icon_tips"
+            android:gravity="center_vertical"
+            android:hint="自定义Marker输入后显示（默认）"/>
+
+        <com.xw.repo.xedittext.XEditText
+            android:id="@+id/custom_marker_edit_text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/icon_tips"
+            android:gravity="center_vertical"
+            android:hint="自定义Marker输入前显示"
+            app:x_customizeMarkerEnable="true"
+            app:x_showMarkerTime="before_input"/>
+
+        <com.xw.repo.xedittext.XEditText
+            android:id="@+id/custom_marker_edit_text3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/icon_tips"
+            android:gravity="center_vertical"
+            android:hint="自定义Marker一直显示"
+            app:x_customizeMarkerEnable="true"
+            app:x_showMarkerTime="always"/>
+
+        <com.xw.repo.xedittext.XEditText
+            android:id="@+id/ios_style_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_corner_gray_bg"
+            android:drawableLeft="@drawable/icon_search"
+            android:hint="搜索"
+            app:x_iOSStyleEnable="true"/>
+    </LinearLayout>
+
+</ScrollView>
